@@ -10,12 +10,14 @@ public class TestController {
 	@Value("${some.value}")
 	private String myValue;
 	
-	@GetMapping(path = "/myValue")
-	public String myValue() {
-		return this.myValue;
-	}
-	
 	@Value("${spring.profiles.active}")
 	private String activeProfile;
+	
+	@GetMapping(path = "/myValue")
+	public String myValue() {
+		return this.myValue+ " desde el perfil: " + activeProfile;
+	}
+	
+	
 
 }
